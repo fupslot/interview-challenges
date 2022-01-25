@@ -106,13 +106,13 @@ func (s *Shifts) Traverse() {
 	s.head = prev
 }
 
-func (s *Shifts) Next() *Node {
+func (s *Shifts) Next() *Shift {
 	node := s.head
 
 	if node == nil {
-		return node
+		return nil
 	}
 
 	s.head = node.Next
-	return node
+	return node.Data
 }
