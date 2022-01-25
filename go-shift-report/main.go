@@ -107,8 +107,8 @@ func main() {
 	var total int64
 	for idx, d := range days {
 		total += d
-		fmt.Printf("D %02d U %.2f\n", idx+1, float64(d/3600))
+		fmt.Printf("D %02d U %.1f\n", idx+1, float64(d)/3600)
 	}
 
-	fmt.Printf("Total %.1f hours\n", float64(total/60))
+	fmt.Printf("Total %.1f hours\n", float64(total)/3600)
 }
