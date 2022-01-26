@@ -28,12 +28,26 @@ func DuplicatesN(values []int) []int {
 
 	for i := 0; i < size; i++ {
 		idx := values[i] % size
-		values[idx] = values[idx] + size
+		values[idx] += size
 	}
 
 	for i := 0; i < size; i++ {
 		if values[i] >= size*2 {
 			result = append(result, i)
+		}
+	}
+
+	return result
+}
+
+func TwoRepeatingElements(values []int) []int {
+	var result []int
+	for i := 0; i < len(values)-1; i++ {
+		for j := i + 1; j < len(values); j++ {
+			if values[i] == values[j] {
+				result = append(result, values[i])
+				break
+			}
 		}
 	}
 

@@ -8,6 +8,8 @@ import (
 
 func main() {
 	r := find.DuplicatesN([]int{3, 4, 1, 2, 2, 2, 4, 5, 5})
+	fmt.Println(r)
 
+	r = find.TwoRepeatingElements([]int{1, 2, 1, 2, 4, 5})
 	fmt.Println(r)
 }
