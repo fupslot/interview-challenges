@@ -35,6 +35,16 @@ func any(v []int8) bool {
 
 	return false
 }
+
+func sum(v []int8) int {
+	r := 0
+	for _, d := range v {
+		r += int(d)
+	}
+
+	return r
+}
+
 func toBit(b bool) int8 {
 	if b {
 		return 1
@@ -104,6 +114,10 @@ func main() {
 		score += 1
 	}
 
+	if sum(specials) > 1 {
+		score += 1
+	}
+
 	if any(uppercases) {
 		score += 1
 	}
@@ -112,5 +126,5 @@ func main() {
 		score += 1
 	}
 
-	fmt.Printf("password: [%s] Score (%d/7)\n", word, score)
+	fmt.Printf("password: [%s] Score (%d/8)\n", word, score)
 }
